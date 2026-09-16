@@ -14,7 +14,14 @@
 - No mid-sentence linebreaks in Markdown: READMEs, PR and issue descriptions, docs. One paragraph is one line, however long; the renderer wraps it.
 - Plain, direct sentences. No filler, no hedging, no recap of what was just said.
 
-## Comments
+## Pull Requests
+- Title should be clear and concise (under 72 characters)
+- Body should have two ## Context and ## Changes sections
+- Context should be a concise explanation of the problem the PR is solving
+- Changes should list the main changes, in a not-too-technical way
+- Never insert "🤖 Generated with Claude Code"
+
+## Code Comments
 
 Write code that does not need one: a better name or a smaller method beats a comment. When one is unavoidable, make it a single line saying *why*, never what the line below already says.
 
