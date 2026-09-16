@@ -1,0 +1,13 @@
+#!/bin/sh
+# Run from any repo that has this repo as a submodule at .claude/org
+set -eu
+cd "$(git rev-parse --show-toplevel)"
+[ -d .claude/org/rules ] || { echo "missing .claude/org — add the submodule first" >&2; exit 1; }
+mkdir -p .claude/rules
+[ -e .claude/rules/org ] || ln -s ../org/rules .claude/rules/org
+if [ -e .claude/settings.json ]; then
+  echo ".claude/settings.json exists — merge .claude/org/settings.json into it by hand"
+else
+  cp .claude/org/settings.json .claude/settings.json
+fi
+echo "installed: .claude/rules/org -> .claude/org/rules"
