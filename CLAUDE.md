@@ -7,7 +7,6 @@
 - Commit messages are one line.
 - Never commit to `master` or `main` without explicit permission; branch first.
 - Never force-push, rebase, or amend a commit you did not write.
-- PR descriptions have a Context section and a Changes section. No "Generated with Claude Code" line, no session URL.
 
 ## Prose
 
@@ -19,7 +18,7 @@
 - Body should have two ## Context and ## Changes sections
 - Context should be a concise explanation of the problem the PR is solving
 - Changes should list the main changes, in a not-too-technical way
-- Never insert "🤖 Generated with Claude Code"
+- Never insert "🤖 Generated with Claude Code" (applies to PR comments as well)
 
 ## Code Comments
 
