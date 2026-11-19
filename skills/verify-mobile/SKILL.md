@@ -1,11 +1,11 @@
 ---
-name: verify
-description: Smoke test the current change end to end before committing: run the suites it touches, then see it working in the app. Use before every commit, and when asked to verify, check or test a change.
+name: verify-mobile
+description: Smoke test a change in a mobile app repo (an ios/ or android/ app, often with a worker/ backend) end to end before committing: run the suites it touches, then see it working in the app. Use before every commit in those repos, and when asked to verify, check or test a change there.
 ---
 
-# Verify
+# Verify a mobile app change
 
-Prove the change in the working tree works, the way someone using the app would see it.
+Prove the change in the working tree works, the way someone using the app would see it. This skill is for repos with an `ios/` or `android/` app; in any other repo, stop and use that repo's own verify skill.
 
 ## Scope
 
@@ -28,9 +28,9 @@ To rerun one Swift Testing test, name it with its parentheses, `'-only-testing:<
 
 ## Android
 
-On a Mac: `cd android && JAVA_HOME="$(brew --prefix openjdk@21)/libexec/openjdk.jdk/Contents/Home" ./gradlew test`.
+`cd android && ./gradlew test`. It needs a JDK 17 or newer: when `java` is not found, point `JAVA_HOME` at one installed on the machine.
 
-A cloud session cannot build Android (its sandbox blocks Google's Maven) and no CI runs it yet, so say the Android change is unverified and name what a Mac session should run and check.
+When Gradle cannot download its dependencies (cloud sandboxes block Google's Maven), no CI runs Android yet, so say the Android change is unverified and name what a session that can build should run and check.
 
 ## Report
 
